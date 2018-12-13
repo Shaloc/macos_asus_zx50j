@@ -1,0 +1,410 @@
+Found a device of class VoodooHDADevice: IOService:/AppleACPIPlatformExpert/PCI0@0/AppleACPIPCI/HDEF@1B/VoodooHDADevice
+
+
+Probing codec #0...
+ HDA Codec #0: Conexant (Unknown)
+ HDA Codec ID: 0x14f1510f
+       Vendor: 0x14f1
+       Device: 0x510f
+     Revision: 0x01
+     Stepping: 0x00
+PCI Subvendor: 0x1a8d1043
+	startNode=1 endNode=2
+	Found audio FG nid=1 startNode=16 endNode=29 total=13
+
+Processing audio FG cad=0 nid=1...
+Powering up...
+Parsing audio FG...
+GPIO: 0x40000003 NumGPIO=3 NumGPO=0 NumGPI=0 GPIWake=0 GPIUnsol=1
+ nid 22 0x04211040 as  4 seq  0 Headphones    Jack  1/8     Right   External Black   misc 0
+ nid 23 0x90170110 as  1 seq  0 Speaker       Fixed Analog  N/A     Internal Unknown misc 0 NoPresenceDetect
+ nid 24 0x04a11030 as  3 seq  0 Microphone    Jack  1/8     Right   External Black   misc 0
+ nid 25 0x40f001f0 as 15 seq  0 Other         None  Unknown N/A     External Unknown misc 0 NoPresenceDetect
+ nid 26 0x95a70120 as  2 seq  0 Microphone    Fixed Analog  Top     Internal Unknown misc 0 NoPresenceDetect
+Parsing vendor patch...
+Nodes patching. Codec = 0 
+NumNodes = 2
+VHDevice NID=16 Config=00000000 (audio output  ) Cap=00000000 Ctrl=00000000 -- Conns:
+VHDevice NID=17 Config=00000000 (audio output  ) Cap=00000000 Ctrl=00000000 -- Conns:
+VHDevice NID=18 Config=00000000 (beep widget   ) Cap=00000000 Ctrl=00000000 -- Conns:
+VHDevice NID=19 Config=00000000 (audio input   ) Cap=00000000 Ctrl=00000000 -- Conns: 0=24 1=26 2=25
+VHDevice NID=20 Config=00000000 (audio input   ) Cap=00000000 Ctrl=00000000 -- Conns: 0=25 1=26 2=21
+VHDevice NID=21 Config=00000000 (audio mixer   ) Cap=00000000 Ctrl=00000000 -- Conns: 0=16 1=17
+VHDevice NID=22 Config=04211040 (pin: Headphone) Cap=0000001c Ctrl=000000c0 -- Conns: 0=16 1=17
+VHDevice NID=23 Config=90170110 (pin: Speaker () Cap=00000010 Ctrl=00000040 -- Conns: 0=16 1=17
+VHDevice NID=24 Config=04a11030 (pin: Microphon) Cap=00001124 Ctrl=00000000 -- Conns: 0=16 1=17
+VHDevice NID=25 Config=40f001f0 (pin: Other (No) Cap=00001120 Ctrl=00000000 -- Conns:
+VHDevice NID=26 Config=95a70120 (pin: Microphon) Cap=00001120 Ctrl=00000000 -- Conns:
+VHDevice NID=27 Config=00000000 (vendor widget ) Cap=00000000 Ctrl=00000000 -- Conns:
+VHDevice NID=28 Config=00000000 (vendor widget ) Cap=00000000 Ctrl=00000000 -- Conns:
+Parsing Ctls...
+Disabling nonaudio...
+Disabling useless...
+ Disabling control 9 nid 25 cnid -1 due to disabled widget.
+ Disabling nid 19 connection 2 due to disabled child widget.
+ Disabling nid 20 connection 0 due to disabled child widget.
+Patched pins configuration:
+ nid 22 0x04211040 as  4 seq  0 Headphones    Jack  1/8     Right   External Black   misc 0
+ nid 23 0x90170110 as  1 seq  0 Speaker       Fixed Analog  N/A     Internal Unknown misc 0 NoPresenceDetect
+ nid 24 0x04a11030 as  3 seq  0 Microphone    Jack  1/8     Right   External Black   misc 0
+ nid 25 0x40f001f0 as 15 seq  0 Other         None  Unknown N/A     External Unknown misc 0 NoPresenceDetect [DISABLED]
+ nid 26 0x95a70120 as  2 seq  0 Microphone    Fixed Analog  Top     Internal Unknown misc 0 NoPresenceDetect
+Parsing pin associations...
+4 associations found:
+Association 0 (1) out:
+ Pin nid=23 seq=0
+   Redir type=-1 jack=-1 def=0
+Association 1 (2) in:
+ Pin nid=26 seq=0
+   Redir type=-1 jack=-1 def=0
+Association 2 (3) in:
+ Pin nid=24 seq=0
+   Redir type=-1 jack=0 def=0
+Association 3 (4) out:
+ Pin nid=22 seq=0
+   Redir type=-1 jack=0 def=0
+Building AFG tree...
+Tracing association 0 (1)
+ Tracing pin 23 with min nid 0
+   nid 16 returned 16
+   nid 17 returned 17
+  nid 23 returned 16
+ Pin 23 traced to DAC 16
+Association 0 (1) trace succeeded
+Tracing association 1 (2)
+ Tracing pin 26 to ADC 19
+  tracing via nid 26
+   tracing via nid 19
+   nid 19 returned 1
+   tracing via nid 20
+   nid 20 returned 0
+  nid 26 returned 1
+ Pin 26 traced to ADC 19
+Association 1 (2) trace succeeded
+Tracing association 2 (3)
+ Tracing pin 24 to ADC 20
+  tracing via nid 24
+   tracing via nid 19
+   nid 19 busy by association 1
+  nid 24 returned 0
+ Unable to trace pin 24 to ADC 20, undo traces
+Association 2 (3) trace failed
+Tracing association 3 (4)
+ Tracing pin 22 with min nid 0
+   nid 16 busy by association 0
+   nid 17 returned 17
+  nid 22 returned 17
+ Pin 22 traced to DAC 17
+Association 3 (4) trace succeeded
+Tracing input monitor
+Tracing other input monitors
+ Tracing nid complex 26 to out
+  tracing via nid 26
+   tracing via nid 19
+   nid 19 busy by input association 1
+   tracing via nid 20
+   nid 20 returned 0
+  nid 26 returned 0
+Tracing beeper
+ Tracing nid 18 to out
+  tracing via nid 18
+  nid 18 returned 0
+Disabling unassociated widgets...
+Disabling nonselected inputs...
+Disabling useless...
+ Disabling control 5 nid 20 cnid -1 due to disabled widget.
+ Disabling control 6 nid 21 cnid 16 due to disabled widget.
+ Disabling control 7 nid 21 cnid 17 due to disabled widget.
+ Disabling control 8 nid 24 cnid -1 due to disabled widget.
+ Disabling nid 19 connection 0 due to disabled child widget.
+Disabling crossassociated connections...
+Disabling useless...
+Binding associations to channels...
+Assigning names to signal sources...
+Assigning mixers to the tree...
+Preparing pin controls...
+AFG commit...
+Creating PCM devices...
+pcmAttach: HDA Conexant (Unknown) PCM #0 Analog at cad 0 nid 1
++--------------------------------------+
+| DUMPING PCM Playback/Record Channels |
++--------------------------------------+
+
+Playback:
+
+     Stream cap: 0x00000001
+                 PCM
+        PCM cap: 0x000a0560
+                 16 24 bits, 44 48 96 192 KHz
+            DAC: 16
+
+Record:
+
+     Stream cap: 0x00000001
+                 PCM
+        PCM cap: 0x000a0160
+                 16 24 bits, 44 48 96 KHz
+            ADC: 19
+
++-------------------------------+
+| DUMPING Playback/Record Paths |
++-------------------------------+
+
+Playback:
+
+    nid=23 [pin: Speaker (Analog)]
+      |
+      + <- nid=16 [audio output] [src: pcm] bindSeq=00000001
+
+
+Record:
+
+    nid=19 [audio input]
+      |
+      + <- nid=26 [pin: Microphone (Analog)] [src: monitor] bindSeq=00000001
+
+
++-------------------------+
+| DUMPING Volume Controls |
++-------------------------+
+
+Master Volume (OSS: vol)
+   |
+   +- control  1 (nid  16 out):    dir - out oss: vol, pcm -74/+0dB (75 steps) + mute
+
+PCM Volume (OSS: pcm)
+   |
+   +- control  1 (nid  16 out):    dir - out oss: vol, pcm -74/+0dB (75 steps) + mute
+
+Microphone2 Volume (OSS: monitor)
+   |
+   +- control 10 (nid  26 in   0): dir - in oss: rec, monitor +0/+36dB (4 steps)
+
+Speaker/Beep Volume (OSS: speaker)
+   |
+   +- control  3 (nid  18 out):    dir - none oss: speaker -28/+0dB (8 steps)
+
+Recording Level (OSS: rec)
+   |
+   +- control 10 (nid  26 in   0): dir - in oss: rec, monitor +0/+36dB (4 steps)
+
+OSS mixer initialization...
+Registering PCM channels...
+pcmAttach: HDA Conexant (Unknown) PCM #1 Analog at cad 0 nid 1
++--------------------------------------+
+| DUMPING PCM Playback/Record Channels |
++--------------------------------------+
+
+Playback:
+
+     Stream cap: 0x00000001
+                 PCM
+        PCM cap: 0x000a0560
+                 16 24 bits, 44 48 96 192 KHz
+            DAC: 17
+
++-------------------------------+
+| DUMPING Playback/Record Paths |
++-------------------------------+
+
+Playback:
+
+    nid=22 [pin: Headphones (Black Right)]
+      |
+      + <- nid=17 [audio output] [src: pcm] bindSeq=00000001
+
+
++-------------------------+
+| DUMPING Volume Controls |
++-------------------------+
+
+Master Volume (OSS: vol)
+   |
+   +- control  2 (nid  17 out):    dir - out oss: vol, pcm -74/+0dB (75 steps) + mute
+
+PCM Volume (OSS: pcm)
+   |
+   +- control  2 (nid  17 out):    dir - out oss: vol, pcm -74/+0dB (75 steps) + mute
+
+OSS mixer initialization...
+Registering PCM channels...
+FG config/quirks: forcestereo ivref50 ivref80 ivref100 ivref
+HP switch init...
+
++-------------------+
+| DUMPING HDA NODES |
++-------------------+
+
+Default Parameter
+-----------------
+     Stream cap: 0x00000001
+                 PCM
+        PCM cap: 0x000e0160
+                 16 20 24 bits, 44 48 96 KHz
+         IN amp: 0x00000000
+        OUT amp: 0x00000000
+
+            nid: 16
+           Name: audio output
+     Widget cap: 0x00000c1d
+                 LRSWAP PWR FORMAT_OVR AMP_OVR OUT_AMP STEREO
+    Association: 0 (0x00000001)
+            OSS: pcm (pcm)
+     Stream cap: 0x00000001
+                 PCM
+        PCM cap: 0x000a0560
+                 16 24 bits, 44 48 96 192 KHz
+     Output amp: 0x80034a4a
+                 mute=1 step=74 size=3 offset=74
+     Output val: [0x35 0x35]
+
+            nid: 17
+           Name: audio output
+     Widget cap: 0x00000c1d
+                 LRSWAP PWR FORMAT_OVR AMP_OVR OUT_AMP STEREO
+    Association: 3 (0x00000001)
+            OSS: pcm (pcm)
+     Stream cap: 0x00000001
+                 PCM
+        PCM cap: 0x000a0560
+                 16 24 bits, 44 48 96 192 KHz
+     Output amp: 0x80034a4a
+                 mute=1 step=74 size=3 offset=74
+     Output val: [0x35 0x35]
+
+            nid: 18
+           Name: beep widget
+     Widget cap: 0x0070000c
+                 AMP_OVR OUT_AMP
+    Association: -2 (0x00000000)
+            OSS: speaker (speaker)
+     Output amp: 0x000f0707
+                 mute=0 step=7 size=15 offset=7
+     Output val: [0x06 0x00]
+
+            nid: 19
+           Name: audio input
+     Widget cap: 0x00100d1b
+                 LRSWAP PWR FORMAT_OVR AMP_OVR IN_AMP STEREO
+    Association: 1 (0x00000001)
+     Stream cap: 0x00000001
+                 PCM
+        PCM cap: 0x000a0160
+                 16 24 bits, 44 48 96 KHz
+      Input amp: 0x8003504a
+                 mute=1 step=80 size=3 offset=74
+      Input val: [0x4A 0x4A] 
+    connections: 3 enabled 1
+          |
+          + [DISABLED] <- nid=24 [pin: Microphone (Black Right)] [DISABLED]
+          + <- nid=26 [pin: Microphone (Analog)] (selected)
+          + [DISABLED] <- nid=25 [pin: Other (None)] [DISABLED]
+
+            nid: 20 [DISABLED]
+           Name: audio input
+     Widget cap: 0x00100d1b
+                 LRSWAP PWR FORMAT_OVR AMP_OVR IN_AMP STEREO
+     Stream cap: 0x00000001
+                 PCM
+        PCM cap: 0x000a0160
+                 16 24 bits, 44 48 96 KHz
+      Input amp: 0x8003504a
+                 mute=1 step=80 size=3 offset=74
+      Input val: [0x80 0x80] 
+    connections: 3 enabled 2
+          |
+          + [DISABLED] <- nid=25 [pin: Other (None)] [DISABLED] (selected)
+          + <- nid=26 [pin: Microphone (Analog)]
+          + <- nid=21 [audio mixer] [DISABLED]
+
+            nid: 21 [DISABLED]
+           Name: audio mixer
+     Widget cap: 0x0020050b
+                 PWR AMP_OVR IN_AMP STEREO
+      Input amp: 0x80034a4a
+                 mute=1 step=74 size=3 offset=74
+      Input val: [0x80 0x80] [0x80 0x80] 
+    connections: 2 enabled 2
+          |
+          + <- nid=16 [audio output]
+          + <- nid=17 [audio output]
+
+            nid: 22
+           Name: pin: Headphones (Black Right)
+     Widget cap: 0x00400581
+                 PWR UNSOL STEREO
+    Association: 3 (0x00000001)
+        Pin cap: 0x0000001c
+                 PDC HP OUT
+     Pin config: 0x04211040
+    Pin control: 0x000000c0 HP OUT
+    connections: 2 enabled 1
+          |
+          + [DISABLED] <- nid=16 [audio output]
+          + <- nid=17 [audio output] (selected)
+
+            nid: 23
+           Name: pin: Speaker (Analog)
+     Widget cap: 0x00400501
+                 PWR STEREO
+    Association: 0 (0x00000001)
+        Pin cap: 0x00000010
+                 OUT
+     Pin config: 0x90170110
+    Pin control: 0x00000040 OUT
+    connections: 2 enabled 1
+          |
+          + <- nid=16 [audio output] (selected)
+          + [DISABLED] <- nid=17 [audio output]
+
+            nid: 24 [DISABLED]
+           Name: pin: Microphone (Black Right)
+     Widget cap: 0x0040048b
+                 PWR UNSOL AMP_OVR IN_AMP STEREO
+        Pin cap: 0x00001124
+                 PDC IN VREF[ 80 HIZ ]
+     Pin config: 0x04a11030
+    Pin control: 0x00000000
+      Input amp: 0x002f0300
+                 mute=0 step=3 size=47 offset=0
+      Input val: [0x00 0x00] 
+    connections: 2 enabled 2
+          |
+          + <- nid=16 [audio output] (selected)
+          + <- nid=17 [audio output]
+
+            nid: 25 [DISABLED]
+           Name: pin: Other (None)
+     Widget cap: 0x0040048b
+                 PWR UNSOL AMP_OVR IN_AMP STEREO
+        Pin cap: 0x00001120
+                 IN VREF[ 80 HIZ ]
+     Pin config: 0x40f001f0
+    Pin control: 0x00000000
+      Input amp: 0x002f0300
+                 mute=0 step=3 size=47 offset=0
+      Input val: [0x00 0x00] 
+
+            nid: 26
+           Name: pin: Microphone (Analog)
+     Widget cap: 0x0040048b
+                 PWR UNSOL AMP_OVR IN_AMP STEREO
+    Association: 1 (0x00000001)
+            OSS: monitor (monitor)
+        Pin cap: 0x00001120
+                 IN VREF[ 80 HIZ ]
+     Pin config: 0x95a70120
+    Pin control: 0x00000024 IN VREFs
+      Input amp: 0x002f0300
+                 mute=0 step=3 size=47 offset=0
+      Input val: [0x02 0x02] 
+
+            nid: 27 [DISABLED]
+           Name: vendor widget
+     Widget cap: 0x00f00000
+
+            nid: 28 [DISABLED]
+           Name: vendor widget
+     Widget cap: 0x00f00000
+
+
