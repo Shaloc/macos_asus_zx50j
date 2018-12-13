@@ -1,0 +1,28 @@
++-------------------------------+
+| DUMPING Playback/Record Paths |
++-------------------------------+
+
+Playback:
+
+    nid=23 [pin: Speaker (Analog)]
+      |
+      + <- nid=16 [audio output] [src: pcm] bindSeq=00000001
+
+
+Record:
+
+    nid=19 [audio input]
+      |
+      + <- nid=26 [pin: Microphone (Analog)] [src: monitor] bindSeq=00000001
+
++-------------------------------+
+| DUMPING Playback/Record Paths |
++-------------------------------+
+
+Playback:
+
+    nid=22 [pin: Headphones (Black Right)]
+      |
+      + <- nid=17 [audio output] [src: pcm] bindSeq=00000001
+
+节点 23(0x)

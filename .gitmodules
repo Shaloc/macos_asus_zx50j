@@ -1,0 +1,6 @@
+[submodule "deps/AppleALC"]
+	path = deps/AppleALC
+	url = https://github.com/vit9696/AppleALC
+[submodule "deps/codecgraph"]
+	path = deps/codecgraph
+	url = https://github.com/cmatsuoka/codecgraph
